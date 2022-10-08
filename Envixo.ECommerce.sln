@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{2A387A82-4963-410D-8FD0-D9DFE7B9DDE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Envixo.ECommerce.App", "Source\Envixo.ECommerce.App\Envixo.ECommerce.App.csproj", "{88A9C618-6781-4134-99BB-D5A378B84228}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88A9C618-6781-4134-99BB-D5A378B84228}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88A9C618-6781-4134-99BB-D5A378B84228}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88A9C618-6781-4134-99BB-D5A378B84228}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88A9C618-6781-4134-99BB-D5A378B84228}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{88A9C618-6781-4134-99BB-D5A378B84228} = {2A387A82-4963-410D-8FD0-D9DFE7B9DDE8}
+	EndGlobalSection
+EndGlobal
