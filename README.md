@@ -60,3 +60,7 @@ Defina a conexão do banco de dados em appsettings.Development.json, na seção 
   "categoryId": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
 }
 ```
+
+## Resultado SonarCloud
+![image](https://user-images.githubusercontent.com/70063088/194777754-ffb2bb36-293b-4b45-83de-5f4ff37c63cb.png)
+
