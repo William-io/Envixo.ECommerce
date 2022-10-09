@@ -2,8 +2,6 @@ API, versão: .NET 6
 
 ## Package
 
-Usar o CLI Dotnet Package, 
-
 ```bash
 > Flunt
 > Microsoft.EntityFrameworkCore
