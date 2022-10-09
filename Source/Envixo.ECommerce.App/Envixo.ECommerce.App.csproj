@@ -2,11 +2,25 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
+    <Using Include="Flunt.Notifications" />
+    <Using Include="Microsoft.EntityFrameworkCore" />
+    <Using Include="Microsoft.AspNetCore.Mvc" />
+    <Using Include="System.Text" />
+    <Using Include="Envixo.Ecommerce.App.Domain.Products" />
+    <Using Include="Envixo.Ecommerce.App.Infrastructure.Data" />
+    <Using Include="Envixo.Ecommerce.App.Endpoints.Categories" />
+    <Using Include="Envixo.Ecommerce.App.Endpoints.Products" />
+
+
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.123" />
     <PackageReference Include="Flunt" Version="2.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.9">
