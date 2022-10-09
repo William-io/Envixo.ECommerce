@@ -1,13 +1,14 @@
 API, versão: .NET 6
 
-## Installation
+## Package
 
 Usar o CLI Dotnet Package, 
 
 ```bash
-> dotnet add package Flunt --version 2.0.5
-> dotnet add package Microsoft.EntityFrameworkCore --version 6.0.9
-> dotnet add package Microsoft.EntityFrameworkCore.Design --version 6.0.9
+> Flunt
+> Microsoft.EntityFrameworkCore
+> EntityFrameworkCore.Design
+> Swagger
 ```
 ## Run
 ```
