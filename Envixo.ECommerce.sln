@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{2A387A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Envixo.ECommerce.App", "Source\Envixo.ECommerce.App\Envixo.ECommerce.App.csproj", "{88A9C618-6781-4134-99BB-D5A378B84228}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{86449B71-26F6-4452-92AC-C4FF7C404D8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Envixo.Ecommerce.Test", "Tests\Envixo.Ecommerce.Test\Envixo.Ecommerce.Test.csproj", "{5494A36E-B0B3-40D5-87E1-A39F755A1A36}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,8 +24,13 @@ Global
 		{88A9C618-6781-4134-99BB-D5A378B84228}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88A9C618-6781-4134-99BB-D5A378B84228}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88A9C618-6781-4134-99BB-D5A378B84228}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5494A36E-B0B3-40D5-87E1-A39F755A1A36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5494A36E-B0B3-40D5-87E1-A39F755A1A36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5494A36E-B0B3-40D5-87E1-A39F755A1A36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5494A36E-B0B3-40D5-87E1-A39F755A1A36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{88A9C618-6781-4134-99BB-D5A378B84228} = {2A387A82-4963-410D-8FD0-D9DFE7B9DDE8}
+		{5494A36E-B0B3-40D5-87E1-A39F755A1A36} = {86449B71-26F6-4452-92AC-C4FF7C404D8E}
 	EndGlobalSection
 EndGlobal
