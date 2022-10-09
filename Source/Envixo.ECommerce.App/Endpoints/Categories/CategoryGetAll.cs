@@ -6,6 +6,11 @@ public class CategoryGetAll
     public static string[] Methods => new string[] { HttpMethod.Get.ToString() };
     public static Delegate Handle => Action;
 
+    [SwaggerOperation(
+          Summary = "Obter lista de categorias",
+          Description = "Obter lista",
+          OperationId = nameof(CategoryGetAll),
+          Tags = new[] { "Category" })]
     public static IResult Action(DataContext context)
     {
         var categories = context.Categories.ToList();

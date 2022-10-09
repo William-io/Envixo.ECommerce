@@ -1,19 +1,24 @@
 namespace Envixo.Ecommerce.App.Endpoints.Products;
 
-public class ProductPost
+public class ProductPut
 {
-    public static string Template => "/products";
-    public static string[] Methods => new string[] { HttpMethod.Post.ToString() };
+    public static string Template => "/products/{id:guid}";
+    public static string[] Methods => new string[] { HttpMethod.Put.ToString() };
     public static Delegate Handle => Action;
 
     [SwaggerOperation(
-          Summary = "Criar um produto",
-          Description = "Crie um produto seguindo o Schemas [Status: True = Ativo, False = Rascunho], *Inserir o ID da Categoria",
-          OperationId = nameof(ProductPost),
+          Summary = "Atualizar um produto",
+          Description = "Precisa-se inserir o ID",
+          OperationId = nameof(ProductPut),
           Tags = new[] { "Product" })]
-    public static async Task<IResult> Action(ProductRequest productRequest, DataContext context)
+    public static async Task<IResult> Action([FromRoute] Guid id, ProductRequest productRequest, DataContext context)
     {
         var category = await context.Categories.FirstOrDefaultAsync(c => c.Id == productRequest.CategoryId);
+        var product = context.Products.Where(c => c.Id == id).FirstOrDefault();
+
+        if (product == null)
+            return Results.NotFound();
+
         var tagsStringBuilder = new StringBuilder();
 
         foreach (var tag in productRequest.Tags)
@@ -21,8 +26,7 @@ public class ProductPost
             tagsStringBuilder.Append($"{tag},");
         }
 
-        var product = new Product(
-            productRequest.Title,
+        product.EditInfo(productRequest.Title,
             productRequest.Description,
             productRequest.MidiaUrl,
             productRequest.Status,
@@ -32,13 +36,10 @@ public class ProductPost
             category);
 
         if (!product.IsValid)
-        {
             return Results.ValidationProblem(product.Notifications.ConvertToProblemDetails());
-        }
 
-        await context.Products.AddAsync(product);
         await context.SaveChangesAsync();
 
-        return Results.Created($"/products/{product.Id}", product.Id);
+        return Results.Ok();
     }
 }
