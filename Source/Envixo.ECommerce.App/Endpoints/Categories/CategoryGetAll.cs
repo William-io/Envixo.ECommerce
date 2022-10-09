@@ -1,24 +1,17 @@
-using Envixo.Ecommerce.App.Domain.Products;
-using Envixo.Ecommerce.App.Infrastructure.Data;
-
 namespace Envixo.Ecommerce.App.Endpoints.Categories;
 
-public class CategoryPost
+public class CategoryGetAll
 {
     public static string Template => "/categories";
-    public static string[] Methods => new string[] { HttpMethod.Post.ToString() };
+    public static string[] Methods => new string[] { HttpMethod.Get.ToString() };
     public static Delegate Handle => Action;
 
-    public static IResult Action(CategoryRequest categoryRequest, DataContext context)
+    public static IResult Action(DataContext context)
     {
-        var category = new Category
-        {
-            Name = categoryRequest.Name
-        };
+        var categories = context.Categories.ToList();
 
-        context.Categories.Add(category);
-        context.SaveChanges();
+        var response = categories.Select(c => new CategoryResponse(c.Id, c.Name, c.Active));
 
-        return Results.Created($"/categories/{category.Id}", category.Id);
+        return Results.Ok(response);
     }
 }

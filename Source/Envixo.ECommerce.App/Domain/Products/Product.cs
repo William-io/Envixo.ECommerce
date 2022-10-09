@@ -4,25 +4,18 @@ namespace Envixo.Ecommerce.App.Domain.Products;
 
 public class Product : Entity
 {
-    // public Product(
-    //     string title,
-    //     string description,
-    //     string midiaUrl,
-    //     bool active,
-    //     decimal price,
-    //     Category category,
-    //     List<Tag> tags)
-    // {
-    //     Title = title;
-    //     Description = description;
-    //     MidiaUrl = midiaUrl;
-    //     Active = active;
-    //     Price = price;
-    //     Category = category;
-    //     Tags = tags;
-
-    //     Validate();
-    // }
+    public Product() { }
+    public Product(string title, string description, string midiaUrl, bool status, decimal price, string tags, Category category)
+    {
+        Title = title;
+        Description = description;
+        MidiaUrl = midiaUrl;
+        Status = status;
+        Price = price;
+        Tags = tags;
+        Category = category;
+        Validate();
+    }
 
     public string Title { get; private set; } = null!;
     public string Description { get; set; } = null!;
@@ -31,7 +24,7 @@ public class Product : Entity
     public decimal Price { get; set; }
     public Guid CategoryId { get; set; }
     public Category Category { get; set; } = null!;
-    public List<Tag> Tags { get; set; } = null!;
+    public string Tags { get; set; } = null!;
 
     private void Validate()
     {

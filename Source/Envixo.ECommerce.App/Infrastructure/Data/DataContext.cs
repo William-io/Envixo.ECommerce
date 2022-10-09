@@ -1,13 +1,9 @@
-using Envixo.Ecommerce.App.Domain.Products;
-using Flunt.Notifications;
-using Microsoft.EntityFrameworkCore;
-
 namespace Envixo.Ecommerce.App.Infrastructure.Data;
 
 public class DataContext : DbContext
 {
-    public DbSet<Product> Products { get; set; } = null!;
-    public DbSet<Category> Categories { get; set; } = null!;
+    public DbSet<Product> Products { get; set; }
+    public DbSet<Category> Categories { get; set; }
 
     public DataContext(DbContextOptions<DataContext> options) : base(options) { }
 

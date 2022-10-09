@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Envixo.ECommerce.App.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20221008160213_Initial")]
+    [Migration("20221009020333_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -53,12 +53,10 @@ namespace Envixo.ECommerce.App.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("MidiaUrl")
-                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
@@ -67,6 +65,10 @@ namespace Envixo.ECommerce.App.Migrations
 
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
+
+                    b.Property<string>("Tags")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -80,27 +82,6 @@ namespace Envixo.ECommerce.App.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("Envixo.Ecommerce.App.Domain.Products.Tag", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<Guid?>("ProductId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("Tag");
-                });
-
             modelBuilder.Entity("Envixo.Ecommerce.App.Domain.Products.Product", b =>
                 {
                     b.HasOne("Envixo.Ecommerce.App.Domain.Products.Category", "Category")
@@ -110,18 +91,6 @@ namespace Envixo.ECommerce.App.Migrations
                         .IsRequired();
 
                     b.Navigation("Category");
-                });
-
-            modelBuilder.Entity("Envixo.Ecommerce.App.Domain.Products.Tag", b =>
-                {
-                    b.HasOne("Envixo.Ecommerce.App.Domain.Products.Product", null)
-                        .WithMany("Tags")
-                        .HasForeignKey("ProductId");
-                });
-
-            modelBuilder.Entity("Envixo.Ecommerce.App.Domain.Products.Product", b =>
-                {
-                    b.Navigation("Tags");
                 });
 #pragma warning restore 612, 618
         }

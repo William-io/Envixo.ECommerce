@@ -1,12 +1,6 @@
-namespace Envixo.Ecommerce.App.Domain.Products
-{
-    public class Tag : Entity
-    {
-        // public Tag(string name)
-        // {
-        //     Name = name;
-        // }
+namespace Envixo.Ecommerce.App.Domain.Products;
 
-        public string Name { get; set; } = null!;
-    }
+public class Tag : Entity
+{
+    public string Name { get; set; } = null!;
 }
