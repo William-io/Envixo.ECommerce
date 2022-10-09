@@ -1,8 +1,6 @@
-using Flunt.Notifications;
-
 namespace Envixo.Ecommerce.App.Domain;
 
-public class Entity : Notifiable<Notification>
+public abstract class Entity : Notifiable<Notification>
 {
     public Entity()
     {

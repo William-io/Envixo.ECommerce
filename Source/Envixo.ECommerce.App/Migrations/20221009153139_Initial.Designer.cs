@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Envixo.ECommerce.App.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20221009020333_Initial")]
+    [Migration("20221009153139_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -61,6 +61,9 @@ namespace Envixo.ECommerce.App.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<decimal>("Price")
+                        .HasColumnType("decimal(10,2)");
+
+                    b.Property<decimal>("PromotionalPrice")
                         .HasColumnType("decimal(10,2)");
 
                     b.Property<bool>("Status")

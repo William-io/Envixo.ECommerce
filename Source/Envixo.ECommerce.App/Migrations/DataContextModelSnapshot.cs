@@ -61,6 +61,9 @@ namespace Envixo.ECommerce.App.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(10,2)");
 
+                    b.Property<decimal>("PromotionalPrice")
+                        .HasColumnType("decimal(10,2)");
+
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
 

@@ -11,12 +11,13 @@
     <Using Include="Microsoft.EntityFrameworkCore" />
     <Using Include="Microsoft.AspNetCore.Mvc" />
     <Using Include="System.Text" />
+    <Using Include="Envixo.Ecommerce.App.Settings" />
+    <Using Include="Microsoft.OpenApi.Models" />
+    <Using Include="Swashbuckle.AspNetCore.Annotations" />
     <Using Include="Envixo.Ecommerce.App.Domain.Products" />
     <Using Include="Envixo.Ecommerce.App.Infrastructure.Data" />
     <Using Include="Envixo.Ecommerce.App.Endpoints.Categories" />
     <Using Include="Envixo.Ecommerce.App.Endpoints.Products" />
-
-
   </ItemGroup>
 
   <ItemGroup>
@@ -28,7 +29,8 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.9" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.4.0" />
   </ItemGroup>
 
 </Project>

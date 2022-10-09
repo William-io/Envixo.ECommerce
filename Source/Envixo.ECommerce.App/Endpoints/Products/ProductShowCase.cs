@@ -6,6 +6,11 @@ public class ProductShowCase
     public static string[] Methods => new string[] { HttpMethod.Get.ToString() };
     public static Delegate Handle => Action;
 
+    [SwaggerOperation(
+          Summary = "Obter lista de produtos por parginação",
+          Description = "Page = 1, Row = 10 produtos, orderBy = [Title]",
+          OperationId = nameof(ProductShowCase),
+          Tags = new[] { "Product" })]
     public static IResult Action(DataContext context, int page = 1, int row = 10, string orderBy = "title")
     {
         if (row > 10)
@@ -25,7 +30,7 @@ public class ProductShowCase
 
         var products = queryFilter.ToList();
 
-        var results = products.Select(p => new ProductResponse(p.Id, p.Title, p.Description, p.MidiaUrl, p.Status, p.Price, p.Tags, p.Category.Name));
+        var results = products.Select(p => new ProductResponse(p.Id, p.Title, p.Description, p.MidiaUrl, p.Status, p.Price, p.PromotionalPrice, p.Tags, p.Category.Name, p.Category.Id));
         return Results.Ok(results);
     }
 }

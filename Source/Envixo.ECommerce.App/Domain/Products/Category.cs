@@ -8,7 +8,6 @@ public class Category : Entity
     {
         Name = name;
         Active = active;
-
         Validate();
     }
 

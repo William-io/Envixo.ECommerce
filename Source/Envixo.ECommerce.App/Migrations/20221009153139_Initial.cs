@@ -32,6 +32,7 @@ namespace Envixo.ECommerce.App.Migrations
                     MidiaUrl = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
                     Status = table.Column<bool>(type: "bit", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(10,2)", nullable: false),
+                    PromotionalPrice = table.Column<decimal>(type: "decimal(10,2)", nullable: false),
                     CategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Tags = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true)
                 },
