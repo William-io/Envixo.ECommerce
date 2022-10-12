@@ -3,6 +3,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddSqlServer<DataContext>(builder.Configuration["ConnectionStrings:Connection"]);
+//Azure
+builder.ConfigureServices();
 
 builder.Services.AddSwaggerSetup();
 
@@ -31,6 +33,8 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 var app = builder.Build();
+
+// var connectionString = app.Configuration.GetConnectionString("DefaultConnection");
 
 app.UseSwaggerSetup();
 
