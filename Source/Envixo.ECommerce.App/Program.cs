@@ -4,7 +4,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSqlServer<DataContext>(builder.Configuration["ConnectionStrings:Connection"]);
 //Azure
-builder.ConfigureServices();
 
 builder.Services.AddSwaggerSetup();
 
